@@ -11,11 +11,19 @@ const App = () => {
   const [films, setFilms] = useState(TMDB.films)
   const [current, setCurrent] = useState({})
 
+  let handleDetailsClick = (film) => {
+    console.log("fetching details for ", film)
+    setCurrent(film)
+
+}
+
+
     return (
      <div className="film-library">
        <FilmListing 
         films={TMDB.films}
         current={current}
+        handleDetailsClick={handleDetailsClick}
       />
          
         <FilmDetails 
