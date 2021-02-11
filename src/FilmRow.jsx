@@ -10,12 +10,15 @@ const FilmRow = (props) => {
     return (
         <div>
             <div onClick={(e) => handleDetailsClick(props.film)} className="film-row">
-                <FilmPoster poster_path={props.film.poster_path} title={props.film.title} />
+                <FilmPoster 
+                    poster_path={props.film.poster_path} 
+                    title={props.film.title}  
+                />
                 <div className="film-summary">
                     <h1>{props.film.title}</h1>
                     <p>{props.film.release_date.substring(0,4)}</p>
                 </div>
-                <Fave />
+                <Fave  onFaveToggle={() => {props.onFaveToggle(props.film)}} />
             </div>  
         </div>
     )

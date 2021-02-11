@@ -9,11 +9,19 @@ import TMDB from './TMDB';
 const App = () => {
   
   const [films, setFilms] = useState(TMDB.films)
+  const [current, setCurrent] = useState({})
+
     return (
      <div className="film-library">
-       <FilmListing films={TMDB.films} />
+       <FilmListing 
+        films={TMDB.films}
+        current={current}
+      />
          
-        <FilmDetails films={TMDB.films} />
+        <FilmDetails 
+          films={TMDB.films}
+          current={current}
+        />
      </div>
     );
   
