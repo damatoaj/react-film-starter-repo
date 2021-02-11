@@ -29,7 +29,6 @@ const Fave = (props) => {
     const [isFave, setIsFave] = useState(false)
 
     const handleClick = (e) => {
-        // e.stopPropogation()
         setIsFave({
             isFave: !isFave
         })
